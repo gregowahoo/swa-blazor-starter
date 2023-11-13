@@ -1,4 +1,4 @@
-﻿@page "/fetchperson"
+﻿@page "/fetchdata"
 @using BlazorApp.Shared 
 @inject HttpClient Http
 
@@ -42,9 +42,7 @@ else
     {
         try
         {
-            // forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("/api/WeatherForecast") ?? new WeatherForecast[]{};
-            //            const endpoint = '/data-api/rest/Person';
-            var result= await Http.GetFromJsonAsync<string[]>("/data-api/rest/Person") ?? new string[] { };
+            forecasts = await Http.GetFromJsonAsync<WeatherForecast[]>("/api/WeatherForecast") ?? new WeatherForecast[]{};
         }
         catch (Exception ex)
         {
